@@ -1,5 +1,9 @@
-function createGrid(){
+function createGrid(n){
     
+    function calculateDim(n){
+        return Math.floor(400/n);
+   }
+
     let cont=document.querySelector('.container');
     cont.style.height="400px";
     cont.style.width="400px";
@@ -13,7 +17,7 @@ function createGrid(){
     //cont.style.justifyContent="start";
     //cont.style.alignItems="strech";
     
-    for(let i=0;i<16;i++)
+    for(let i=0;i<n;i++)
      {
         let r = document.createElement('div');
         
@@ -33,7 +37,7 @@ function createGrid(){
 
         document.querySelector('.container').append(r);
 
-        for(let j=0;j<16;j++)
+        for(let j=0;j<n;j++)
         {
             let c= document.createElement('div');
             c.innerHTML=' ';
@@ -57,8 +61,29 @@ function createGrid(){
    }
 }
 
-function calculateDim(n){
-     return Math.floor(400/n);
-}
-createGrid();
 
+createGrid(16);
+
+document.querySelector('#reset').addEventListener('click',  reset);
+function reset(){
+
+    n =  prompt('Enter the number of grids on each side');
+    if(n>100)
+    {
+        alert('Limit Exceeded: Maximum Value is 100')
+    }
+    else
+    {
+    clear();
+    createGrid(n);
+    }
+    
+}
+
+function clear(){
+    let grid=document.querySelector('.container');
+    while(grid.lastChild)
+    {
+        grid.removeChild(grid.lastChild);
+    }
+}
