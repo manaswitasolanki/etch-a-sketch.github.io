@@ -38,13 +38,21 @@ function createGrid(){
             let c= document.createElement('div');
             c.innerHTML=' ';
             c.style.backgroundColor='white';
-            c.style.border='thin solid black';
+            //c.style.border='thin solid black';
             c.style.margin="0px";
             c.style.height=calculateDim(16);
             c.style.width=calculateDim(16);
-           c.style.flexGrow='1';
+            c.style.flexGrow='1';
             
             r.append(c);
+
+            //event listener on each pixel
+
+            c.addEventListener('mouseenter' , draw);
+            function draw()
+            {
+                c.style.backgroundColor='black';
+            }
         }
    }
 }
@@ -53,3 +61,4 @@ function calculateDim(n){
      return Math.floor(400/n);
 }
 createGrid();
+
