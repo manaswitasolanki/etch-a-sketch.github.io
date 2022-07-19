@@ -5,14 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ETCH-A-SKETCH</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
 </head>
 <body>
-    <button id="reset">RESET</button>
-    <div class="container">
-
+    <div class="header">
+        <div class="heading">ETCH-A-SKETCH</div>
+        <div class="subheading">Paint Using Your Mouse</div>
     </div>
 
+    <div class="options">
+             <button class="b" id="reset">Reset Size</button>
+             <button class="b" id="clear">Clear Canvas</button>
+             <button class="b" id="color">
+                <p>Select Color</p>
+                <input type="color" id="col">
+             </button>
+             <button class="b" id="magic">Magic</button>
+    </div>
 
+    <div class="canvas">
+        <div class = "inst">Just hover your mouse over the canvas and see the pixels change color</div>
+       <div class="board"> <div class="container"></div></div>
+        <div class="amaz">Isn't it amazing !!</div>
+   </div>
+
+   <div class="footer">
+     <div class ="copyright">&copy; </div>
+     <a href="https://github.com/manaswitasolanki"><img id ="git" src='github.png' alt="github logo"></a>
+     <div >manaswitasolanki</div>
+   </div>
+   
     <script src="sketch-app.js"></script>
     
 </body>

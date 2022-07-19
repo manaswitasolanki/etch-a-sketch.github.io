@@ -57,6 +57,34 @@ function createGrid(n){
             {
                 c.style.backgroundColor='black';
             }
+
+            document.querySelector("#clear").addEventListener('click', clean);
+            function clean()
+            {
+                c.style.backgroundColor='white';
+            }
+
+            document.querySelector('#color').addEventListener('click',color);
+            function color()
+            {
+                c.addEventListener('mouseenter',()=>{
+                c.style.backgroundColor= document.querySelector('#col').value;
+                });
+            }
+
+            document.querySelector('#magic').addEventListener('click',magic);
+            function magic()
+            {
+                c.addEventListener('mouseenter',()=>{
+                let r = Math.floor(Math.random() * 256);
+                let g = Math.floor(Math.random() * 256);
+                let b = Math.floor(Math.random() * 256);
+                let RGBColor = "rgb(" + r + "," + g + "," + b + ")";  
+                c.style.backgroundColor=RGBColor;
+            });
+            }
+
+            
         }
    }
 }
@@ -87,3 +115,5 @@ function clear(){
         grid.removeChild(grid.lastChild);
     }
 }
+
+
